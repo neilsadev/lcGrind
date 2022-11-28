@@ -1,7 +1,13 @@
 from typing import List
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        print(sorted(nums))
+        hashset = set()
+
+        for n in nums:
+            if n in hashset:
+                return True
+            hashset.add(n)
+        return False
 
 obj = Solution()
-obj.containsDuplicate([1,5,3,4,2])
+print(obj.containsDuplicate([1,5,1,4,2]))
